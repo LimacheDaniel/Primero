@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+	
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- <link rel="stylesheet" href="../bower_components/animate.css/animate.css" /> -->
+    <!-- <link rel="stylesheet" href="../bower_components/Waves/dist/waves.css" /> -->
+    <link rel="stylesheet" href="../bower_components/form.validation/dist/css/formValidation.css"/>
+    <!-- <link rel="stylesheet" href="../bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.css" /> -->
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/datatables.net-bs/css/dataTables.bootstrap.css"/>
+    <link rel="stylesheet" href="../bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.css"/>
+    <!-- <link rel="stylesheet" href="../bower_components/chosen/chosen.min.css"/> -->
+    <!-- <link rel="stylesheet" href="../bower_components/bootstrap4c-chosen/dist/css/component-chosen.css"/> -->
+    <!-- <link rel="stylesheet" href="../bower_components/bootstrap-select/dist/css/bootstrap-select.css"/> -->
+    <link rel="stylesheet" href="../bower_components/bootstrap-sweetalert/dist/sweetalert.css"/>
+    <!-- <link rel="stylesheet" href="../bower_components/growl/stylesheets/jquery.growl.css" />	 -->
+    <link rel="stylesheet" href="../bower_components/bootstrap-fileinput/css/fileinput.css"/>
+    <link rel="stylesheet" href="../bower_components/bootstrap-duallistbox/dist/bootstrap-duallistbox.css"/>
+	
+	<link rel="stylesheet" href="../css/tema/inicio.css" ></link>
+	<!-- <link rel="stylesheet" href="../css/styles.css" /> -->
+	<!-- <link rel="stylesheet" href="../css/tema/app.min.1.css"/> -->
+    <!-- <link rel="stylesheet" href="../css/tema/app.min.2.css"/> -->
+
+    <style>
+        *{
+            font-size: 15px !important;
+        }
+
+    </style>
+</head>
+<body>
+	
+	<a href="#" class="flecha_menu showMenu" id="showMenu"><i class="icono fa fa-bars"></i></a>
+	<div class="menu">
+		<!-- <h3 class="menu_titulo">MENU</h3> -->
+		<div class="contenido_menu">
+			<ul class="lista-menu" id="side-menu">
+				<li class="">
+					<a href="#" id="mod" data-id="" class="title_menu"><i class=""></i>
+					<span>Parametros</span>
+					<!--<i class="icono derecha fa fa-chevron-down" aria-hidden="true"></i>-->
+					</a>
+				<ul class="lista-procesos list-procesos" data-id="" >
+					<li class="sub-proceso">
+						<a href="#" data-href="/Paises/gestion" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Paises</a>
+					</li>
+					<li class="sub-proceso">
+						<a href="#" data-href="" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Departamentos</a>
+					</li>
+					<li class="sub-proceso">
+						<a href="#" data-href="" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Provincias</a>
+					</li>
+				</ul>
+				</li>
+			</ul>	
+		</div>	
+	</div>
+	<div class="contenedor">
+		<header>
+			<div class="logo">
+				<img src="../img/infinito.jpeg" width="150" alt="">
+				<a href="#">INFINITO</a>
+			</div>
+			<!-- <span class="sp-btn">
+				<a href="#" class="btn-menu showMenu" id="showMenu"><i class="icono fa fa-bars"></i></a>
+			</span> -->
+			<nav>
+				<ul class="menu_navegacion">
+					<li>
+						<!-- <button class="avatar btn btn-danger" style="border-radius: 50%;" onclick="window.open('/helpChm/AYUDA_SISTEMA-web/index.html')"> <span class="fa fa-question-circle fa-2x"></span></button> -->
+						<!-- <button class="avatar btn btn-danger" style="border-radius: 50%;" >  -->
+							<span class="fa fa-question-circle fa-2x" onclick="AYUDACHM()"></span>
+						</button>
+					</li>
+					<li>
+						<select class="tipe form-control" name="roles" id="select-Roles" onchange="GetMenus(this)">	
+						</select>
+					</li>
+					<li>
+						<p>Conectado: <i class="fa fa-circle conectado" ></i>&nbsp; 
+						
+					</li>
+						<strong ><h5 class="conectado_user"></h5></strong></p>
+					<li>
+					</li>
+					<li>
+						<img class="avatar" id="avatar" src="../img/user.png" th:src="@{/img/user.png}" alt="logo">
+					</li>
+					<li>
+					<!-- 	<a href="#" class="salir">
+							<i class="fa fa-sign-out btn-logout" id="btn-desc"></i>
+						</a>
+ -->
+						<div class="dropdown">
+						  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    <!-- Dropdown -->
+						    <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="left: -120px !important">
+						    <li><a href="#" onclick="changePassword()">USUARIO
+						    		<i class="fa fa-user"></i>
+						    	</a>
+						    </li>
+						     <!-- <li><a href="#"></a></li> -->
+						    <!-- <li role="separator" class="divider"></li> -->
+						    <li>
+						    	<a href="#" class="salir text-center" id="btn-desc">DESCONECAR
+									<i class="fa fa-sign-out btn-logout" ></i>
+								</a>>
+							</li>
+						  </ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+ 
+		<section class="main">	
+			<div id="contenedor-gestion">
+				<h4>Te damos la bienvenida..</h4>
+			</div>
+		</section>
+		<footer>
+			<div class="social">
+				<a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+				<a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+			</div>
+		</footer>
+	</div>
+
+	<div id="cont-modales" class="cont-modales"></div>
+
+	<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="reportes" aria-hidden="true">
+	  <div class="modal-dialog modal-lg" style="width: 90%">
+	    <div class="modal-content cont-reportes" >
+	      <iframe id="frameReportes" width="100%" height="600px"></iframe>
+	    </div>
+	  </div>
+	</div>
+
+	<script type="" src="../bower_components/jquery/dist/jquery.js" ></script>
+    <script type="" src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- <script type="" src="../bower_components/Waves/dist/waves.js"></script> -->
+    <!-- <script type="" src="../bower_components/jquery-form/dist/jquery.form.min.js" ></script> -->
+    <script type="" src="../bower_components/form.validation/dist/js/formValidation.js" ></script>
+    <script type="" src="../bower_components/form.validation/dist/js/framework/bootstrap.js" ></script>
+    <script type="" src="../bower_components/form.validation/dist/js/language/es_ES.js"></script>
+    <script type="" src="../bower_components/datatables.net/js/jquery.dataTables.js"></script>
+    <script type="" src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.js"></script>
+    <script type="" src="../bower_components/datatables.net-responsive/js/dataTables.responsive.js"></script>
+    <script type="" src="../bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <!-- <script type="" src="../bower_components/chosen/chosen.jquery.min.js"></script> -->
+    <!-- <script type="" src="../bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script> -->
+    <!-- <script type="" src="../bower_components/bootstrap-select/dist/js/i18n/defaults-es_ES.js"></script> -->
+    <script type="" src="../bower_components/bootstrap-sweetalert/dist/sweetalert.js"></script>
+    <!-- <script src="../bower_components/growl/javascripts/jquery.growl.js"></script> -->
+    <!-- <script src="../bower_components/bootstrap-growl/jquery.bootstrap-growl.min.js"></script> -->
+    <!-- <script type="" src="../bower_components/jquery-load-json/dist/jquery.loadJSON.min.js"></script>  -->
+
+    <script type="" src="../bower_components/bootstrap-fileinput/js/fileinput.js"></script> 
+	<script type="" src="../bower_components/bootstrap-fileinput/js/locales/es.js" ></script> 
+	<script type="" src="../bower_components/bootstrap-duallistbox/dist/jquery.bootstrap-duallistbox.js"></script> 
+   
+	<!-- <script type="" src="../js/tema/js/functions.js" ></script> -->
+    <!-- <script type="" src="../js/ajax/GBeneficiarios.js"></script> -->
+    <!-- <script src="../js/myscript.js"></script> -->
+    
+    <script type="text/javascript">
+
+
+		function getGestion(link_gest){	
+		
+			var enlace=$(link_gest).data('href');
+			$.post(enlace,function(resp){
+				$('#contenedor-gestion').html(resp);
+			})
+
+		}
+
+	
+	</script>
+</body>
+</html>
+
+<!-- 1MtuSdJ/7Fc= --> 
